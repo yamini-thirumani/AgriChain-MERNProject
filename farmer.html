@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChain</title>
+    <link rel="stylesheet" href="farmer.css">
+</head>
+<body>
+    <nav id = "desktop-nav">
+        <div class="logo">AgriChain</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#crops">Crops</a></li>
+                <li><a href="#order">Orders</a></li>
+                <li><a href="#transport">Transport</a></li>
+                <li><a href="#payment">Payment</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section >
+      <div id = "dashboard">
+        <h2 id = "farmer-name">Hello, Vinod!</h2>
+      <div class="card-container">
+        <!-- Card 1 -->
+      <div class="card">
+        <img src="crop-management.jpeg" alt="Crops">
+        <div class="card-content">
+          <h3>Crop Management</h3>
+          <p>Track your crops' growth stages, soil health, and yield predictions.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="order-management.jpeg" alt="Orders">
+        <div class="card-content">
+          <h3>Order Management</h3>
+          <p>View your revenue, manage buyers, and analyze your market trends.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="transport-management.avif" alt="Transport">
+        <div class="card-content">
+          <h3>Transport Management</h3>
+          <p>Understand your farm’s performance with advanced charts and insights.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="payment.avif" alt="Payment">
+        <div class="card-content">
+          <h3>Payments & Transactions</h3>
+          <p>Monitor transportation, optimize routes, and ensure timely deliveries.</p>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+
+
+    <section id = "crops">
+      <div class="crop-container">
+    <h1>Crop Management</h1>
+    <button id="addCropButton">Add Crops</button>
+
+    <form class="crop-form-container" id="cropForm">
+      <input type="text" id="cropName" placeholder="Crop Name" required>
+      <input type="text" id="cropVariety" placeholder="Crop Variety" required>
+      <input type="date" id="sowingDate" placeholder="Sowing Date" required>
+      <input type="date" id="harvestingDate" placeholder="Expected Harvesting Date" required>
+      <input type="text" id="area" placeholder="Area (e.g., 10 acres)" required>
+      <select id="irrigationType" required>
+        <option value="">Select Irrigation Type</option>
+        <option value="Drip">Drip</option>
+        <option value="Sprinkler">Sprinkler</option>
+        <option value="Flood">Flood</option>
+      </select>
+      <textarea id="fertilizers" placeholder="Fertilizers/Pesticides/Herbicides Used" rows="3"></textarea>
+      <input type="number" id="marketPrice" placeholder="Market Price" required>
+      <textarea id="additionalNotes" placeholder="Additional Notes" rows="3"></textarea>
+      <button type="button" id="submitCrop">Submit</button>
+    </form>
+  </div>
+
+  <div class="card-container" id="cardContainer"></div>
+
+    </section>
+    <script src="farmer.js"></script>
+</body>
+</html>
