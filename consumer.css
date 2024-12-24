@@ -1,30 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
+    margin : 0;
     padding: 0;
-    margin: 0;
 }
 
-body{
-    font-family: "Poppins", sans-serif;
-        
-}
-form{
-  font-family: "Poppins", sans-serif;
-      
-}
 html{
     scroll-behavior: smooth;
 }
-p{
-    color: rgb(85,85,85);
-    color: #1A1A19;
+body,form{
+    font-family: "Poppins", sans-serif;
 }
 
-a,.btn{
-    transition: all 300ms ease;
-}
+.logo{
+    font-size: 2rem;
+    color: #3b5323;
+    font-weight: 500;
 
+}
+a{
+    color: #3b5323;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+a:hover{
+    text-decoration: underline;
+    color: #654520;
+    text-decoration-color: #654520;
+    text-underline-offset: 0.75rem;
+  
+}
 nav,.nav-links{
     display: flex;
 }
@@ -34,27 +39,13 @@ nav{
     height: 17vh;
 }
 .nav-links{
-    gap:2rem;
     list-style: none;
+    gap : 2rem;
     font-size: 1.5rem;
 }
-a{
-    color: black;
-    text-decoration: none;
-    text-decoration-color: white;
-}
-a:hover{
-    color: #654520;
-    text-decoration: underline;
-    text-underline-offset: 0.75rem;
-    text-decoration-color: #31511E ;
-}
-.logo{
-    font-size: 2rem;
-    font-family:"Poppins";
-    font-weight: 500;
-    color: #31511E;
-}
+
+
+/*HAMBURGER*/
 
 /*Hamburger Menu*/
 #hamburger-nav{
@@ -145,3 +136,87 @@ a:hover{
 }
 
 
+
+
+
+
+
+
+/*PRODUCTS DETAILS*/
+#productdetails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productdetailes-container{
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 20px;
+
+}
+h2{
+    color: #31511E;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p{
+    color: #654520;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.productdetails-form-group{
+    margin-bottom: 15px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #3b5323;
+}
+input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: "Poppins";
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+}
+input::placeholder{
+    color: #333;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #3b5323;
+    background-color: #fff;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #3b5323;
+    color: #fff;
+    font-family: "Poppins";
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+button:hover{
+    background-color: #654520;
+}
+#catelog{
+    width : 100%;
+}
+#productJourney ul {
+    list-style-type: none;    
+  }

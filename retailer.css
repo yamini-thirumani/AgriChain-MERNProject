@@ -56,6 +56,23 @@ a:hover{
     color: #31511E;
 }
 
+
+#dashboard{
+    margin: auto;
+    padding: 20px;
+    height: 100vh;
+  }
+
+h2{
+    font-size: 28px;
+    font-weight: 600;
+    color: #2a5b25;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 40px;
+  }
+
+/*HAMBURGER*/
 /*Hamburger Menu*/
 #hamburger-nav{
     display: none;
@@ -145,3 +162,94 @@ a:hover{
 }
 
 
+
+
+  /*INVENTORY*/
+  .inventory-form-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 20px; /* Add margin for left and right padding */
+}
+
+h2 {
+    text-align: center;
+    color: #3b5323; /* Dark green */
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    color: #6b4226; /* Brown */
+    margin-bottom: 20px;
+}
+
+.inventory-form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #3b5323;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px; /* Increased font size for better readability */
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 1px solid #3b5323;
+    background-color: #fff;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3b5323; /* Dark green */
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6b4226; /* Brown */
+}
+
+.note {
+    font-size: 12px;
+    text-align: center;
+    color: #888;
+    margin-top: 10px;
+}
+#inventory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

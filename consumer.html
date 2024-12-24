@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer</title>
+    <link rel="stylesheet" href="consumer.css">
+</head>
+<body>
+    <nav id = "desktop-nav">
+        <div class="logo">AgriChain</div>
+        <div>
+            <ul class = "nav-links">
+                <li><a href="#catalog">Catolog</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#productdetails">ProductDetails</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id = "hamburger-nav">
+        <div class="logo">AgriChain</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#catalog" onclick="toggleMenu()">Catolog</a></li>
+                <li><a href="#order" onclick="toggleMenu()">Order</a></li>
+                <li><a href="#productdetails" onclick="toggleMenu()">ProductDetails</a></li>
+                <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id = "catelog"></section>
+    <section id = "order"></section>
+    <section id = "productdetails">
+        <div class="productdetailes-container">
+            <h2>Product Details</h2>
+            <p>Track product details efficiently</p>
+            <form action="" id = "productdetailes-form">
+                <div class="productdetails-form-group">
+                    <label for="productcode">Enter/Scan Product Code</label>
+                    <input type="text" id = "productCode" placeholder="E.g : ACD1299">
+                </div>
+            </form>
+            <button id = "lkpbutton" type="submit">Submit</button>
+            <div id = "productJourney" style = "display : none;"></div>
+        </div>
+       
+    </section>
+
+    <section id = "profile"></section>
+    <script src = "consumer.js" defer></script>
+</body>
+</html>

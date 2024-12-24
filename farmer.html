@@ -7,19 +7,35 @@
     <link rel="stylesheet" href="farmer.css">
 </head>
 <body>
-    <nav id = "desktop-nav">
-        <div class="logo">AgriChain</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#crops">Crops</a></li>
-                <li><a href="#order">Orders</a></li>
-                <li><a href="#transport">Transport</a></li>
-                <li><a href="#payment">Payment</a></li>
-                <li><a href="#profile">Profile</a></li>
-            </ul>
-        </div>
-    </nav>
-
+  <nav id = "desktop-nav">
+    <div class="logo">AgriChain</div>
+    <div>
+        <ul class="nav-links">
+            <li><a href="#crops">Crops</a></li>
+            <li><a href="#order">Orders</a></li>
+            <li><a href="#transport">Transport</a></li>
+            <li><a href="#payment">Payment</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+    </div>
+</nav>
+<nav id = "hamburger-nav">
+  <div class="logo">AgriChain</div>
+  <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#crops" onclick="toggleMenu()">Crops</a></li>
+        <li><a href="#order" onclick="toggleMenu()">Orders</a></li>
+        <li><a href="#transport" onclick="toggleMenu()">Transport</a></li>
+        <li><a href="#payment" onclick="toggleMenu()">Payment</a></li>
+        <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
+      </div>
+  </div>
+</nav>
     <section >
       <div id = "dashboard">
         <h2 id = "farmer-name">Hello, Vinod!</h2>

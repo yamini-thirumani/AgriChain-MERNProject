@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="retailer.css">
+</head>
+<body>
+    <nav id = "desktop-nav">
+        <div class="logo">AgriChain</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#catelog">Catelog</a></li>
+                <li><a href="#makeorder">MakeOrder</a></li>
+                <li><a href="#inventory">Inventory</a></li>
+                <li><a href="#payment">Payment</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id = "hamburger-nav">
+        <div class="logo">AgriChain</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#catelog" onclick="toggleMenu()">Catelog</a></li>
+                <li><a href="#makeorder" onclick="toggleMenu()">MakeOrder</a></li>
+                <li><a href="#inventory" onclick="toggleMenu()">Inventory</a></li>
+                <li><a href="#payment" onclick="toggleMenu()">Payment</a></li>
+                <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id = "dashboard">
+
+    </section>
+    <section id = "catelog">
+
+    </section>
+    <section id = "makeorder">
+
+    </section>
+    <section id = "inventory">
+        <div class="inventory-form-container">
+            <h2>Product Management</h2>
+            <p>Track product details efficiently</p>
+            <form>
+                <div class="inventory-form-group">
+                    <label for="arrival-date">Product Arrival Date</label>
+                    <input type="date" id="arrival-date" placeholder="Select date" required>
+                </div>
+                <div class="inventory-form-group">
+                    <label for="stock-location">Stocking Location</label>
+                    <input type="text" id="stock-location" placeholder="Enter location" required>
+                </div>
+                <div class="inventory-form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" placeholder="Enter product name" required>
+                </div>
+                <div class="inventory-form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" placeholder="Enter quantity" required>
+                </div>
+                <div class="inventory-form-group">
+                    <label for="additional-info">Additional Information</label>
+                    <textarea id="additional-info" placeholder="Add notes or details..."></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <p class="note">Please ensure all details are accurate before submitting.</p>
+        </div>
+    </section>
+    <section id = "payment">
+
+    </section>
+    <section id = "profile">
+
+    </section>
+    <script src="retailer.js"></script>
+</body>
+</html>
