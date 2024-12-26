@@ -12,9 +12,8 @@
         <div>
             <ul class="nav-links">
                 <li><a href="#catelog">Catelog</a></li>
-                <li><a href="#makeorder">MakeOrder</a></li>
                 <li><a href="#inventory">Inventory</a></li>
-                <li><a href="#payment">Payment</a></li>
+                <li><a href="#order">Track Order</a></li>
                 <li><a href="#profile">Profile</a></li>
             </ul>
         </div>
@@ -29,22 +28,41 @@
             </div>
             <div class="menu-links">
                 <li><a href="#catelog" onclick="toggleMenu()">Catelog</a></li>
-                <li><a href="#makeorder" onclick="toggleMenu()">MakeOrder</a></li>
                 <li><a href="#inventory" onclick="toggleMenu()">Inventory</a></li>
-                <li><a href="#payment" onclick="toggleMenu()">Payment</a></li>
+                <li><a href="#order" onclick="toggleMenu()">MakeOrder</a></li>
                 <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
             </div>
         </div>
     </nav>
-    <section id = "dashboard">
-
+    <section id="welcome-section">
+        <div class="welcome-container">
+          <h1 class="welcome-title">Welcome to AgriChain Marketplace</h1>
+          <p class="welcome-description">Browse through a wide variety of fresh crops sourced directly from our trusted farmers. Empowering retailers and customers with transparency and quality produce.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+      </section>
+      <section id = "catelog">
+      <section id="search-filter">
+        <div class="search-filter-container">
+          <input type="text" class="search-input" placeholder="Search for crops..." />
+          <select class="filter-select">
+            <option value="" disabled selected>Filter by Category</option>
+            <option value="wheat">Wheat</option>
+            <option value="rice">Rice</option>
+            <option value="corn">Corn</option>
+          </select>
+          <select class="filter-select">
+            <option value="" disabled selected>Filter by Location</option>
+            <option value="xyz-village">XYZ Village</option>
+            <option value="abc-town">ABC Town</option>
+          </select>
+          <button class="search-btn">Search</button>
+        </div>
+        <div class = "Explore-div">
+        <a href="catelog.html" class="Explore">Explore Catelog</a>
+    </div>
     </section>
-    <section id = "catelog">
-
-    </section>
-    <section id = "makeorder">
-
-    </section>
+    
     <section id = "inventory">
         <div class="inventory-form-container">
             <h2>Product Management</h2>
@@ -75,12 +93,50 @@
             <p class="note">Please ensure all details are accurate before submitting.</p>
         </div>
     </section>
-    <section id = "payment">
+    
+    <section id = "order">
+        <div class="no-oders">
+           <div class="text-no-orders">
+             Sorry! You have no previous orders
+           </div>
+         </div>
+     </section>
 
-    </section>
-    <section id = "profile">
-
-    </section>
+     <section id="profile">
+        <section id="retailer-profile">
+          <div class="profile-container">
+            <div class="profile-header">
+              <div class="profile-image">
+                <span class="profile-initials">V</span> <!-- Initial of retailer's name -->
+              </div>
+              <h2 class="retailer-name">Vinod's Store</h2>
+              <p class="retailer-location">Location: Downtown Market, XYZ City</p>
+            </div>
+      
+            <div class="profile-details">
+              <h3>About the Retailer</h3>
+              <p class="bio">Vinod has been running his grocery store for over 15 years. His focus is on offering fresh produce and high-quality groceries at affordable prices. He is passionate about customer service and sustainability.</p>
+            </div>
+      
+            <div class="profile-stats">
+              <h3>Store Stats</h3>
+              <ul>
+                <li><strong>Store Size:</strong> 5000 sq ft</li>
+                <li><strong>Product Categories:</strong> Grocery, Fresh Produce, Snacks, Beverages</li>
+                <li><strong>Customers Served Per Month:</strong> 10,000+</li>
+              </ul>
+            </div>
+      
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              <p><strong>Phone:</strong> +9876543210</p>
+              <p><strong>Email:</strong> vinodstore@email.com</p>
+              <p><strong>Website:</strong> www.vinodstore.com</p>
+            </div>
+          </div>
+        </section>
+      </section>
+      
     <script src="retailer.js"></script>
 </body>
 </html>

@@ -34,8 +34,45 @@
             </div>
         </div>
     </nav>
-    <section id = "catelog"></section>
-    <section id = "order"></section>
+
+    <section id="welcome-section">
+        <div class="welcome-container">
+          <h1 class="welcome-title">Welcome to AgriChain Marketplace</h1>
+          <p class="welcome-description">Browse through a wide variety of fresh crops sourced directly from our trusted farmers. Empowering retailers and customers with transparency and quality produce.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+      </section>
+      <section id = "catelog">
+      <section id="search-filter">
+        <div class="search-filter-container">
+          <input type="text" class="search-input" placeholder="Search for crops..." />
+          <select class="filter-select">
+            <option value="" disabled selected>Filter by Category</option>
+            <option value="wheat">Wheat</option>
+            <option value="rice">Rice</option>
+            <option value="corn">Corn</option>
+          </select>
+          <select class="filter-select">
+            <option value="" disabled selected>Filter by Location</option>
+            <option value="xyz-village">XYZ Village</option>
+            <option value="abc-town">ABC Town</option>
+          </select>
+          <button class="search-btn">Search</button>
+        </div>
+        <div class = "Explore-div">
+        <a href="catelog.html" class="Explore">Explore Catelog</a>
+    </div>
+    </section>
+    
+    <section id = "order">
+        <div class="no-oders">
+           <div class="text-no-orders">
+             Sorry! You have no previous orders
+           </div>
+         </div>
+     </section>
+
+
     <section id = "productdetails">
         <div class="productdetailes-container">
             <h2>Product Details</h2>
@@ -52,7 +89,40 @@
        
     </section>
 
-    <section id = "profile"></section>
+    <section id="profile">
+        <section id="customer-profile">
+          <div class="profile-container">
+            <div class="profile-header">
+              <div class="profile-image">
+                <span class="profile-initials">V</span> <!-- Initial of customer name -->
+              </div>
+              <h2 class="customer-name">Vinod Kumar</h2>
+              <p class="customer-location">Location: XYZ City</p>
+            </div>
+      
+            <div class="profile-details">
+              <h3>About the Customer</h3>
+              <p class="bio">Vinod is a regular shopper at various markets and is particularly interested in fresh produce and quality groceries. He values sustainable and local farming practices and supports ethical businesses.</p>
+            </div>
+      
+            <div class="purchase-stats">
+              <h3>Purchase Stats</h3>
+              <ul>
+                <li><strong>Total Purchases:</strong> 150+ Items</li>
+                <li><strong>Average Spend per Visit:</strong> $200</li>
+                <li><strong>Preferred Categories:</strong> Fresh Produce, Beverages, Snacks</li>
+              </ul>
+            </div>
+      
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              <p><strong>Phone:</strong> +9876543210</p>
+              <p><strong>Email:</strong> vinod.kumar@email.com</p>
+            </div>
+          </div>
+        </section>
+      </section>
+      
     <script src = "consumer.js" defer></script>
 </body>
 </html>

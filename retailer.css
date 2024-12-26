@@ -253,3 +253,218 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
+
+#welcome-section {
+    background-color: #fff; /* Olive Green */
+    color: #654520;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .welcome-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .welcome-title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  .welcome-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .get-started-btn {
+    background-color: #3b5323; /* Brown Button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 25%;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #704011; /* Darker Brown */
+  }
+  #search-filter {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .search-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .search-input {
+    flex: 1;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .filter-select {
+    flex: 1;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-btn {
+    background-color: #556B2F; /* Olive Green */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto;
+  }
+  
+  .search-btn:hover {
+    background-color: #4A5D23; /* Darker Olive Green */
+  }
+.Explore{
+    text-align: center;
+    color: #3b5323;
+    width: 100%;
+}
+.Explore-div{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#order, #transport{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+  
+  .no-oders {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .text-no-orders {
+    font-size: 18px;
+    color: #3b5323;
+    font-weight: 500;
+  }
+/* Profile Section Container */
+#profile {
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Profile Header */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    background-color: #556B2F; /* Olive Green */
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .retailer-name {
+    font-size: 24px;
+    color: #556B2F; /* Olive Green */
+    margin: 0;
+  }
+  
+  .retailer-location {
+    font-size: 14px;
+    color: #8B4513; /* Brown */
+  }
+  
+  /* Profile Details */
+  .profile-details {
+    margin-bottom: 20px;
+  }
+  
+  .profile-details h3 {
+    font-size: 18px;
+    color: #556B2F; /* Olive Green */
+    margin-bottom: 10px;
+  }
+  
+  .bio {
+    font-size: 14px;
+    color: #8B4513; /* Brown */
+  }
+  
+  /* Profile Stats */
+  .profile-stats {
+    margin-bottom: 20px;
+  }
+  
+  .profile-stats h3 {
+    font-size: 18px;
+    color: #556B2F; /* Olive Green */
+    margin-bottom: 10px;
+  }
+  
+  .profile-stats ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .profile-stats li {
+    font-size: 14px;
+    color: #8B4513; /* Brown */
+    margin-bottom: 5px;
+  }
+  
+  /* Contact Information */
+  .contact-info {
+    margin-bottom: 20px;
+  }
+  
+  .contact-info h3 {
+    font-size: 18px;
+    color: #556B2F; /* Olive Green */
+    margin-bottom: 10px;
+  }
+  
+  .contact-info p {
+    font-size: 14px;
+    color: #8B4513; /* Brown */
+    margin-bottom: 5px;
+  }
+  

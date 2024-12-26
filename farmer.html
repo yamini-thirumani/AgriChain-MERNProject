@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriChain</title>
+    <title>Farmer</title>
     <link rel="stylesheet" href="farmer.css">
 </head>
 <body>
@@ -12,9 +12,8 @@
     <div>
         <ul class="nav-links">
             <li><a href="#crops">Crops</a></li>
-            <li><a href="#order">Orders</a></li>
-            <li><a href="#transport">Transport</a></li>
-            <li><a href="#payment">Payment</a></li>
+            <li><a href="#order">Your Orders</a></li>
+            <li><a href="#transport">Track Order</a></li>
             <li><a href="#profile">Profile</a></li>
         </ul>
     </div>
@@ -29,9 +28,8 @@
       </div>
       <div class="menu-links">
         <li><a href="#crops" onclick="toggleMenu()">Crops</a></li>
-        <li><a href="#order" onclick="toggleMenu()">Orders</a></li>
-        <li><a href="#transport" onclick="toggleMenu()">Transport</a></li>
-        <li><a href="#payment" onclick="toggleMenu()">Payment</a></li>
+        <li><a href="#order" onclick="toggleMenu()">Your Orders</a></li>
+        <li><a href="#transport" onclick="toggleMenu()">Track Order</a></li>
         <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
       </div>
   </div>
@@ -45,7 +43,7 @@
         <img src="crop-management.jpeg" alt="Crops">
         <div class="card-content">
           <h3>Crop Management</h3>
-          <p>Track your crops' growth stages, soil health, and yield predictions.</p>
+          <p>Stay updated on your crops' progress, soil conditions, and forecasted yields.</p>
         </div>
       </div>
 
@@ -54,7 +52,7 @@
         <img src="order-management.jpeg" alt="Orders">
         <div class="card-content">
           <h3>Order Management</h3>
-          <p>View your revenue, manage buyers, and analyze your market trends.</p>
+          <p>Manage sales, track profits, and explore buyer trends for better decision-making.</p>
         </div>
       </div>
 
@@ -63,7 +61,7 @@
         <img src="transport-management.avif" alt="Transport">
         <div class="card-content">
           <h3>Transport Management</h3>
-          <p>Understand your farm’s performance with advanced charts and insights.</p>
+          <p>Optimize transportation routes and monitor farm performance with detailed analytics.</p>
         </div>
       </div>
 
@@ -72,7 +70,7 @@
         <img src="payment.avif" alt="Payment">
         <div class="card-content">
           <h3>Payments & Transactions</h3>
-          <p>Monitor transportation, optimize routes, and ensure timely deliveries.</p>
+          <p>Track payments, streamline financial transactions, and manage your earnings effectively</p>
         </div>
       </div>
       </div>
@@ -107,6 +105,54 @@
 
   <div class="card-container" id="cardContainer"></div>
 
+    </section>
+
+    <section id = "order">
+       <div class="no-oders">
+          <div class="text-no-orders">
+            Sorry! You have no previous orders
+          </div>
+        </div>
+    </section>
+
+    <section id = "transport">
+      <div class="no-oders">
+        <div class="text-no-orders">
+          Sorry! You have no current orders
+        </div>
+      </div>
+    </section>
+
+    <section id = "profile">
+      <section id="farmer-profile">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-image">
+                    <span class="profile-initials">V</span>
+                </div>
+                <h2 class="farmer-name">Vinod</h2>
+                <p class="farmer-location">Location: XYZ Village</p>
+            </div>
+            <div class="profile-details">
+                <h3>About the Farmer</h3>
+                <p class="bio">Vinod has been farming for over 10 years and specializes in organic farming. His primary crops are wheat and rice, and he is committed to sustainable practices.</p>
+            </div>
+            <div class="profile-stats">
+                <h3>Farm Stats</h3>
+                <ul>
+                    <li><strong>Farm Size:</strong> 20 Acres</li>
+                    <li><strong>Crops Grown:</strong> Wheat, Rice, Corn</li>
+                    <li><strong>Production per Year:</strong> 500 Tons</li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Phone:</strong> +123456789</p>
+                <p><strong>Email:</strong> vinod@email.com</p>
+            </div>
+        </div>
+    </section>
+    
     </section>
     <script src="farmer.js"></script>
 </body>

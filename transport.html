@@ -11,9 +11,9 @@
         <div class="logo">AgriChain</div>
         <div>
             <ul class="nav-links">
-                <li><a href="#crops">Home</a></li>
-                <li><a href="#transport">Delivery</a></li>
-                <li><a href="#payment">History</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#history">History</a></li>
                 <li><a href="#profile">Profile</a></li>
             </ul>
         </div>
@@ -27,13 +27,112 @@
                 <span></span>
             </div>
             <div class="menu-links">
-                <li><a href="#crops" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#transport" onclick="toggleMenu()">Delivery</a></li>
-                <li><a href="#payment" onclick="toggleMenu()">History</a></li>
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#delivery" onclick="toggleMenu()">Delivery</a></li>
+                <li><a href="#history" onclick="toggleMenu()">History</a></li>
                 <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
             </div>
         </div>
     </nav>
+
+    <section id = "home">
+        <div id="dashboard">
+          <h2 id="farmer-name">Hello, Ramesh!</h2>
+          <div class="card-container">
+            
+            <!-- Card 1: Transport Routes -->
+            <div class="card">
+              <img src="img.jpeg" alt="Transport Routes">
+              <div class="card-content">
+                <h3>Transport Routes</h3>
+                <p>Manage and optimize your transport routes to ensure timely deliveries.</p>
+              </div>
+            </div>
+      
+            <!-- Card 2: Fleet Management -->
+            <div class="card">
+              <img src="fleet.jpeg" alt="Fleet Management">
+              <div class="card-content">
+                <h3>Fleet Management</h3>
+                <p>Track your vehicles, monitor their performance, and schedule maintenance.</p>
+              </div>
+            </div>
+      
+            <!-- Card 3: Delivery Tracking -->
+            <div class="card">
+              <img src="deliverytrack.jpeg" alt="Delivery Tracking">
+              <div class="card-content">
+                <h3>Delivery Tracking</h3>
+                <p>Monitor the status of deliveries, including real-time updates and notifications.</p>
+              </div>
+            </div>
+      
+            <!-- Card 4: Route Analytics -->
+            <div class="card">
+              <img src="route.jpeg" alt="Route Analytics">
+              <div class="card-content">
+                <h3>Route Analytics</h3>
+                <p>Analyze route efficiency, fuel consumption, and optimize for cost savings.</p>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id = "delivery">
+    <section id = "order">
+       <div class="no-oders">
+          <div class="text-no-orders">
+            Sorry! You have no current deliveries
+          </div>
+        </div>
+    </section>
+  </section>
+    <section id = "history">
+    <section id = "transport">
+      <div class="no-oders">
+        <div class="text-no-orders">
+          Sorry! You have no previous deliveries
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="profile">
+    <section id="supplier-profile">
+      <div class="profile-container">
+        <div class="profile-header">
+          <div class="profile-image">
+            <span class="profile-initials">T</span>
+          </div>
+          <h2 class="supplier-name">Ramesh</h2>
+          <p class="supplier-location">Location: ABC City</p>
+        </div>
+        <div class="profile-details">
+          <h3>About the Supplier</h3>
+          <p class="bio">
+            Ramesh has been in the transport business for over 8 years, specializing in agricultural logistics. He ensures timely and safe delivery of produce across various regions.
+          </p>
+        </div>
+        <div class="profile-stats">
+          <h3>Transport Details</h3>
+          <ul>
+            <li><strong>Vehicle Type:</strong> Mini Truck</li>
+            <li><strong>Capacity:</strong> 10 Tons</li>
+            <li><strong>Operational Routes:</strong> ABC City to XYZ Village</li>
+            <li><strong>Trips Per Month:</strong> 20</li>
+          </ul>
+        </div>
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><strong>Phone:</strong> +9876543210</p>
+          <p><strong>Email:</strong> ramesh_transport@email.com</p>
+        </div>
+      </div>
+    </section>
+  </section>
+  
+      
     <script src="transport.js"></script>
 </body>
 </html>
