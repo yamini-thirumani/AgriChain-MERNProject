@@ -237,23 +237,23 @@ p{
     position: relative;
 }
 .pics-container #slider-img-1{
-    background-image: url(img4.jpg);
+    background-image: url(./images/img4.jpg);
    
 }
 .pics-container #slider-img-2{
-    background-image: url(img.jpeg);
+    background-image: url(./images/img.jpeg);
 
 }
 .pics-container #slider-img-3{
-    background-image: url(img2.jpg);
+    background-image: url(./images/img2.jpg);
    
 }
 .pics-container #slider-img-4{
-    background-image: url(img1.jpg);
+    background-image: url(./images/img1.jpg);
    
 }
 .pics-container #slider-img-5{
-    background-image: url(img3.jpg);
+    background-image: url(./images/img3.jpg);
    
 }
 .pics-container .button-holder .button{
