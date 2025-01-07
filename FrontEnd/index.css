@@ -165,7 +165,7 @@ p{
     overflow: hidden;
     
 } */
-.pics-container {
+/* .pics-container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -305,8 +305,97 @@ p{
     75%{transform: translateX(-300%);}
     95%{transform: translateX(-300%);}
     100%{transform: translateX(0%);}
+} */
+
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 2rem auto;
 }
 
+.pics-container {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+.text-container h2 {
+    font-size: 2rem;
+    color: #3b5323;
+    margin-bottom: 1rem;
+}
+
+.text-container p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #654520;
+    margin-bottom: 1rem;
+}
+
+/* Image Slider */
+.pics-container .wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #eaeaea;
+    position: relative;
+}
+
+.pics-container .wrapper-holder {
+    display: flex;
+    width: 500%;
+    animation: slider 20s ease-in-out infinite;
+}
+
+.slider-img {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.slider-img:hover {
+    transform: scale(1.05);
+}
+
+#slider-img-1 {
+    background-image: url(./images/farmer.jpeg);
+}
+#slider-img-2 {
+    background-image: url(./images/img.jpeg);
+}
+#slider-img-3 {
+    background-image: url(./images/img2.jpg);
+}
+#slider-img-4 {
+    background-image: url(./images/img1.jpg);
+}
+#slider-img-5 {
+    background-image: url(./images/img3.jpg);
+}
+
+/* Slider Animation */
+@keyframes slider {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 95% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}
 
 /* ABOUT US section*/
 #about-us {
