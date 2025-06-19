@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Catalog - AgriChain</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand" href="/">AgriChain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <% if (locals.user) { %>
+                        <li class="nav-item">
+                            <span class="nav-link">Welcome, <%= user.username %></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/logout">Logout</a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/register">Register</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="product-catalog">
+        <div class="catalog-container">
+            <h1 class="catalog-title">Crop Catalog</h1>
+            
+            <% if (locals.success_msg && success_msg.length > 0) { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <%= success_msg %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <% } %>
+            
+            <% if (locals.error_msg && error_msg.length > 0) { %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= error_msg %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <% } %>
+
+            <% if (products && products.length > 0) { %>
+                <div class="catalog-grid">
+                    <% products.forEach(product => { %>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="<%= product.image || 'https://via.placeholder.com/150' %>" alt="<%= product.name %>">
+                            </div>
+                            <h2 class="product-name"><%= product.name %></h2>
+                            <p class="farmer-name">By: <%= product.farmerId ? product.farmerId.username : 'Unknown Farmer' %></p>
+                            <p class="product-price">Price: ₹<%= product.price %>/unit</p>
+                            <p class="product-location">Location: <%= product.location %></p>
+                            <a href="/catalog/<%= product._id %>" class="view-details-btn">View Details</a>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <div class="text-center py-5">
+                    <h3>No products available in the catalog</h3>
+                    <p>Check back later for new products!</p>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+    <footer class="footer mt-auto py-3" style="background-color: var(--primary-color); color: white;">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <%= new Date().getFullYear() %> AgriChain. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

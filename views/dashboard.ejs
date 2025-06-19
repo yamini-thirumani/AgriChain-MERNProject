@@ -1,0 +1,67 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #3b5323;">Welcome, <%= user.username %>!</h5>
+                    <p class="card-text">
+                        <strong>Email:</strong> <%= user.email %><br>
+                        <strong>Role:</strong> <%= user.role.charAt(0).toUpperCase() + user.role.slice(1) %><br>
+                        <strong>Member since:</strong> <%= new Date(user.createdAt).toLocaleDateString() %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #3b5323;">Your Dashboard</h5>
+                    <% if (user.role === 'farmer') { %>
+                        <div class="alert alert-info">
+                            <h6>Farmer Dashboard</h6>
+                            <p>Manage your crops, track harvests, and connect with transporters.</p>
+                        </div>
+                    <% } else if (user.role === 'transporter') { %>
+                        <div class="alert alert-info">
+                            <h6>Transporter Dashboard</h6>
+                            <p>View available shipments and manage your deliveries.</p>
+                        </div>
+                    <% } else if (user.role === 'retailer') { %>
+                        <div class="alert alert-info">
+                            <h6>Retailer Dashboard</h6>
+                            <p>Browse available products and manage your inventory.</p>
+                        </div>
+                    <% } else if (user.role === 'consumer') { %>
+                        <div class="alert alert-info">
+                            <h6>Consumer Dashboard</h6>
+                            <p>Browse products and track your orders.</p>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.alert {
+    border: none;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.alert-info {
+    background-color: #e8f5e9;
+    border-left: 4px solid #3b5323;
+}
+</style> 

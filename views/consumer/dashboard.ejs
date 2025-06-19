@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Dashboard - AgriChain</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">AgriChain</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="/consumer">Home</a></li>
+                <li><a href="/catalog">Catalog</a></li>
+                <li><a href="/consumer/orders">My Orders</a></li>
+                <% if (locals.user) { %>
+                    <li><a href="#profile">My Profile</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+    
+    <nav id="hamburger-nav">
+        <div class="logo">AgriChain</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="/consumer" onclick="toggleMenu()">Home</a></li>
+                <li><a href="/catalog" onclick="toggleMenu()">Catalog</a></li>
+                <li><a href="/consumer/orders" onclick="toggleMenu()">My Orders</a></li>
+                <% if (locals.user) { %>
+                    <li><a href="#profile" onclick="toggleMenu()">My Profile</a></li>
+                    <li><a href="/auth/logout" onclick="toggleMenu()">Logout</a></li>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <% if (locals.success_msg && success_msg.length > 0) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= success_msg %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <% } %>
+    
+    <% if (locals.error_msg && error_msg.length > 0) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= error_msg %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <% } %>
+
+    <section id="dashboard">
+        <% if (locals.user) { %>
+            <div class="welcome-section">
+                <h2 id="consumer-name">Welcome back, <%= user.username %>! 🛍️</h2>
+                <p class="welcome-subtitle">Browse fresh produce and manage your orders efficiently</p>
+                <div class="quick-actions">
+                    <a href="/catalog" class="quick-action-btn">
+                        <i class="fas fa-shopping-basket"></i>
+                        Browse Catalog
+                    </a>
+                    <a href="/consumer/orders" class="quick-action-btn">
+                        <i class="fas fa-list"></i>
+                        My Orders
+                    </a>
+                    <a href="/consumer/wishlist" class="quick-action-btn">
+                        <i class="fas fa-heart"></i>
+                        Wishlist
+                    </a>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="guest-welcome">
+                <h2 id="consumer-name">Welcome to Consumer Dashboard</h2>
+                <p class="welcome-subtitle">Explore the features available to consumers in AgriChain</p>
+                <div class="login-prompt">
+                    <p>Please <a href="/auth/login">log in</a> or <a href="/auth/register">sign up</a> to access your personalized dashboard.</p>
+                </div>
+            </div>
+        <% } %>
+        
+        <div class="card-container">
+            <!-- Card 1: Product Catalog -->
+            <div class="card">
+                <img src="/images/crop-management.jpeg" alt="Catalog">
+                <div class="card-content">
+                    <h3>Product Catalog</h3>
+                    <p>Browse through fresh produce and groceries from local farmers and retailers.</p>
+                    <a href="/catalog" class="role-link">Browse Catalog →</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Order History -->
+            <div class="card">
+                <img src="/images/order-management.jpeg" alt="Orders">
+                <div class="card-content">
+                    <h3>Order History</h3>
+                    <p>Track your previous orders and view delivery status in real-time.</p>
+                    <a href="/consumer/orders" class="role-link">View Orders →</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Wishlist -->
+            <div class="card">
+                <img src="/images/transport-management.avif" alt="Wishlist">
+                <div class="card-content">
+                    <h3>Wishlist</h3>
+                    <p>Save your favorite products and get notified when they're available.</p>
+                    <a href="/consumer/wishlist" class="role-link">View Wishlist →</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Reviews -->
+            <div class="card">
+                <img src="/images/payment.avif" alt="Reviews">
+                <div class="card-content">
+                    <h3>My Reviews</h3>
+                    <p>Share your feedback and read reviews from other customers.</p>
+                    <a href="/consumer/reviews" class="role-link">View Reviews →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <% if (locals.user) { %>
+    <section id="profile">
+        <section id="user-profile">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <span class="profile-initials"><%= user.username.charAt(0).toUpperCase() %></span>
+                    </div>
+                    <h2 class="user-name"><%= user.username %></h2>
+                    <p class="user-location">Location: <%= user.location || 'Not specified' %></p>
+                </div>
+                
+                <% if (user.role === 'consumer') { %>
+                    <div class="profile-details">
+                        <h3>About the Customer</h3>
+                        <p class="bio"><%= user.username %> is a regular shopper at various markets and is particularly interested in fresh produce and quality groceries. They value sustainable and local farming practices and support ethical businesses.</p>
+                    </div>
+                    <div class="profile-stats">
+                        <h3>Purchase Stats</h3>
+                        <ul>
+                            <li><strong>Total Purchases:</strong> 150+ Items</li>
+                            <li><strong>Average Spend per Visit:</strong> $200</li>
+                            <li><strong>Preferred Categories:</strong> Fresh Produce, Beverages, Snacks</li>
+                        </ul>
+                    </div>
+                <% } else if (user.role === 'farmer') { %>
+                    <div class="profile-details">
+                        <h3>About the Farmer</h3>
+                        <p class="bio"><%= user.username %> has been farming for over 10 years and specializes in organic farming. Their primary crops are wheat and rice, and they are committed to sustainable practices.</p>
+                    </div>
+                    <div class="profile-stats">
+                        <h3>Farm Stats</h3>
+                        <ul>
+                            <li><strong>Farm Size:</strong> 20 Acres</li>
+                            <li><strong>Crops Grown:</strong> Wheat, Rice, Corn</li>
+                            <li><strong>Production per Year:</strong> 500 Tons</li>
+                        </ul>
+                    </div>
+                <% } else if (user.role === 'retailer') { %>
+                    <div class="profile-details">
+                        <h3>About the Retailer</h3>
+                        <p class="bio"><%= user.username %> has been running their grocery store for over 15 years. Their focus is on offering fresh produce and high-quality groceries at affordable prices. They are passionate about customer service and sustainability.</p>
+                    </div>
+                    <div class="profile-stats">
+                        <h3>Store Stats</h3>
+                        <ul>
+                            <li><strong>Store Size:</strong> 5000 sq ft</li>
+                            <li><strong>Product Categories:</strong> Grocery, Fresh Produce, Snacks, Beverages</li>
+                            <li><strong>Customers Served Per Month:</strong> 10,000+</li>
+                        </ul>
+                    </div>
+                <% } else if (user.role === 'transporter') { %>
+                    <div class="profile-details">
+                        <h3>About the Transporter</h3>
+                        <p class="bio"><%= user.username %> has been in the transport business for over 8 years, specializing in agricultural logistics. They ensure timely and safe delivery of produce across various regions.</p>
+                    </div>
+                    <div class="profile-stats">
+                        <h3>Transport Details</h3>
+                        <ul>
+                            <li><strong>Vehicle Type:</strong> Mini Truck</li>
+                            <li><strong>Capacity:</strong> 10 Tons</li>
+                            <li><strong>Operational Routes:</strong> ABC City to XYZ Village</li>
+                            <li><strong>Trips Per Month:</strong> 20</li>
+                        </ul>
+                    </div>
+                <% } %>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Email:</strong> <%= user.email %></p>
+                    <p><strong>Role:</strong> <%= user.role.charAt(0).toUpperCase() + user.role.slice(1) %></p>
+                    <p><strong>Member Since:</strong> <%= new Date(user.createdAt).toLocaleDateString() %></p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <% } %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const icon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %> - AgriChain</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand" href="/">AgriChain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <% if (locals.user) { %>
+                        <li class="nav-item">
+                            <span class="nav-link">Welcome, <%= user.username %></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/logout">Logout</a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/register">Register</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <% if (locals.success_msg && success_msg.length > 0) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= success_msg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        <% } %>
+        
+        <% if (locals.error_msg && error_msg.length > 0) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= error_msg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        <% } %>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-image-container">
+                    <img src="<%= product.image || 'https://via.placeholder.com/400' %>" 
+                         alt="<%= product.name %>" 
+                         class="img-fluid rounded">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-details">
+                    <h1 class="product-title"><%= product.name %></h1>
+                    <p class="farmer-name">By: <%= product.farmerId ? product.farmerId.username : 'Unknown Farmer' %></p>
+                    
+                    <div class="product-info">
+                        <p><strong>Price:</strong> ₹<%= product.price %>/unit</p>
+                        <p><strong>Location:</strong> <%= product.location %></p>
+                        <p><strong>Category:</strong> <%= product.category %></p>
+                        <p><strong>Quantity Available:</strong> <%= product.quantity %> <%= product.unit %></p>
+                        <% if (product.description) { %>
+                            <p><strong>Description:</strong> <%= product.description %></p>
+                        <% } %>
+                        <% if (product.harvestDate) { %>
+                            <p><strong>Harvest Date:</strong> <%= new Date(product.harvestDate).toLocaleDateString() %></p>
+                        <% } %>
+                        <% if (product.expiryDate) { %>
+                            <p><strong>Expiry Date:</strong> <%= new Date(product.expiryDate).toLocaleDateString() %></p>
+                        <% } %>
+                        <% if (product.organic) { %>
+                            <p><strong>Organic:</strong> Yes</p>
+                        <% } %>
+                        <% if (product.certification) { %>
+                            <p><strong>Certification:</strong> <%= product.certification %></p>
+                        <% } %>
+                    </div>
+
+                    <div class="product-actions mt-4">
+                        <a href="/catalog" class="btn btn-secondary">Back to Catalog</a>
+                        <% if (locals.user && user.role === 'retailer') { %>
+                            <button class="btn btn-primary" onclick="addToCart('<%= product._id %>')">Add to Cart</button>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3" style="background-color: var(--primary-color); color: white;">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <%= new Date().getFullYear() %> AgriChain. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function addToCart(productId) {
+            // Implement cart functionality
+            alert('Product added to cart!');
+        }
+    </script>
+</body>
+</html> 

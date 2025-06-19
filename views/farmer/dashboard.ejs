@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard - AgriChain</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand" href="/">AgriChain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <span class="nav-link">Welcome, <%= user.username %></span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <% if (locals.success_msg && success_msg.length > 0) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= success_msg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% } %>
+        
+        <% if (locals.error_msg && error_msg.length > 0) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= error_msg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% } %>
+
+        <div class="dashboard-container">
+            <div class="welcome-section">
+                <h1>Welcome to Your Dashboard</h1>
+                <p class="welcome-subtitle">Manage your crops and track your farming activities</p>
+            </div>
+
+            <div class="quick-actions">
+                <a href="/farmer/crops/new" class="quick-action-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add New Crop</span>
+                </a>
+                <a href="/farmer/crops" class="quick-action-btn">
+                    <i class="fas fa-seedling"></i>
+                    <span>View My Crops</span>
+                </a>
+                <a href="/farmer/jobs" class="quick-action-btn">
+                    <i class="fas fa-truck"></i>
+                    <span>Transport Jobs</span>
+                </a>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h3 class="dashboard-card-title">Recent Crops</h3>
+                        <i class="fas fa-seedling dashboard-card-icon"></i>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>View and manage your recently added crops</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="/farmer/crops" class="btn btn-primary">View All</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h3 class="dashboard-card-title">Active Jobs</h3>
+                        <i class="fas fa-truck dashboard-card-icon"></i>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>Track your active transport jobs</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="/farmer/jobs" class="btn btn-primary">View Jobs</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h3 class="dashboard-card-title">Profile</h3>
+                        <i class="fas fa-user dashboard-card-icon"></i>
+                    </div>
+                    <div class="dashboard-card-content">
+                        <p>Update your farmer profile and settings</p>
+                    </div>
+                    <div class="dashboard-card-footer">
+                        <a href="/farmer/profile" class="btn btn-primary">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3" style="background-color: var(--primary-color); color: white;">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <%= new Date().getFullYear() %> AgriChain. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html> 

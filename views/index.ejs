@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChain</title>
+    <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+   <div>
+    <a href="./images/img.jpeg"></a>
+   </div>
+    <nav id = "desktop-nav">
+        <div class="heading">
+        <div class="logo">AgriChain</div>
+        <p> Traceable. Transparent. Trusted</p>
+    </div>
+        <div>
+            <ul class = "nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">AboutUs</a></li>
+                <li><a href="#roles">ExploreRoles</a></li>
+                <li><a href="/catalog">Catalog</a></li>
+                <li><a href="#contact-us">ContactUs</a></li>
+                <li><a href="/auth/register">SignUp</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id = "hamburger-nav">
+        <div class="logo">AgriChain</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about-us" onclick="toggleMenu()">AboutUs</a></li>
+                <li><a href="#roles" onclick="toggleMenu()">ExploreRoles</a></li>
+                <li><a href="/catalog" onclick="toggleMenu()">Catalog</a></li>
+                <li><a href="#contact-us" onclick="toggleMenu()">ContactUs</a></li>
+            </div>
+        </div>
+    </nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to AgriChain</h1>
+        <p>Revolutionizing agricultural supply chain management with blockchain technology</p>
+        <% if (!locals.user) { %>
+            <div class="hero-buttons">
+                <a href="/auth/register" class="btn btn-primary">Get Started</a>
+                <a href="/auth/login" class="btn btn-secondary">Login</a>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Explore Our Platform</h2>
+            <p class="lead">Discover how AgriChain can benefit you</p>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="role-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Farmers</h3>
+                <p>Connect directly with buyers and manage your crops efficiently</p>
+                <a href="/explore/farmer" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="role-card">
+                <i class="fas fa-truck"></i>
+                <h3>Transporters</h3>
+                <p>Join our logistics network and grow your business</p>
+                <a href="/explore/transporter" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="role-card">
+                <i class="fas fa-store"></i>
+                <h3>Retailers</h3>
+                <p>Source quality produce and expand your business</p>
+                <a href="/explore/retailer" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="role-card">
+                <i class="fas fa-shopping-basket"></i>
+                <h3>Consumers</h3>
+                <p>Get fresh produce delivered to your doorstep</p>
+                <a href="/explore/consumer" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-container">
+    <div class="pics-container">
+        <img src="/images/farmer2.jpg" alt="AgriChain Image" class="static-image">
+    </div>
+    <div class="text-container">
+        <h2>What is AgriChain?</h2>
+        <p>
+            AgriChain is a blockchain-based system designed to enhance transparency, traceability, 
+            and trust within the agricultural supply chain. By leveraging distributed ledger 
+            technology, AgriChain ensures that every step in the supply chain is documented 
+            and verifiable, helping to build trust among farmers, suppliers, and consumers.
+        </p>
+        <p>
+            The platform supports sustainable practices and empowers farmers by providing them with 
+            detailed insights and fair market opportunities.
+        </p>
+    </div>
+</div>
+
+<section id="about-us">
+    <div class="about-container">
+        <h2 class="section-title">About Us</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="intro-text">
+                    At <strong>Agrichain</strong>, we believe in the power of technology to transform the agricultural industry. Our blockchain-based platform aims to provide transparency and traceability across the agricultural supply chain, empowering farmers, consumers, and businesses to make informed decisions.
+                </p>
+                <p class="intro-text">
+                    We understand the challenges of inefficiency, lack of accountability, and limited visibility in the agricultural sector. Our mission is to revolutionize the way agricultural products are tracked, ensuring authenticity, fair trade, and sustainable practices. By leveraging the capabilities of blockchain, Agrichain guarantees secure and transparent transactions, helping to build trust and foster collaboration among all stakeholders in the food production and distribution process.
+                </p>
+                <p class="vision">
+                    <strong>Our Vision</strong> is to create a sustainable, ethical, and transparent agricultural ecosystem where everyone, from farmers to consumers, benefits from equal access to information and fair trade practices.
+                </p>
+                <p class="ending-text">
+                    Join us in revolutionizing the future of agriculture—where transparency meets innovation.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="roles">
+    <div id="dashboard">
+        <h2 id="farmer-name">Explore Roles</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="/images/farmer.jpeg" alt="Crops">
+                <div class="card-content">
+                    <h3>Farmers</h3>
+                    <p>Farmers are the primary producers in the agricultural supply chain. They are responsible for growing and harvesting crops, raising livestock, and ensuring the quality of their products.</p>
+                    <a href="/farmer" class="role-link">Explore Farmer Role</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/transport-management.avif" alt="Transport">
+                <div class="card-content">
+                    <h3>Transporters</h3>
+                    <p>Transporters are responsible for moving agricultural products from farms to markets. They ensure safe and timely delivery while maintaining product quality during transit.</p>
+                    <a href="/transporter" class="role-link">Explore Transporter Role</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/retailers.jpeg" alt="Orders">
+                <div class="card-content">
+                    <h3>Retailers</h3>
+                    <p>Retailers are responsible for selling agricultural products to consumers. They purchase products from suppliers and ensure that the products are available in the market for consumer purchase.</p>
+                    <a href="/retailer" class="role-link">Explore Retailer Role</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/customer.jpeg" alt="Payment">
+                <div class="card-content">
+                    <h3>Consumers</h3>
+                    <p>Consumers are the end-users of the agricultural products. They purchase products from retailers and are ultimately the reason the supply chain exists. Understanding consumer demand is essential for the entire system's success.</p>
+                    <a href="/consumer" class="role-link">Explore Consumer Role</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact-us">
+    <div class="contact-about-container">
+        <h2 class="contact-section-title">Contact Us</h2>
+        <p>We'd love to hear from you! Please reach out for any queries or feedback.</p>
+        <form action="/contact" method="POST">
+            <div class="contact-form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="contact-name" class="contact-form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="contact-form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" name="contact-email" class="contact-form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="contact-form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="contact-message" class="contact-form-control" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+        <p class="contact-note">We will get back to you as soon as possible.</p>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>We are committed to providing transparent and traceable solutions for the agricultural supply chain.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:info@agrichain.com">support@agrichain.com</a></li>
+                    <li><a href="tel:+1234567890">+123 4567 8910</a></li>
+                    <li><a href="#">Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agrichain. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <script src = "/js/index.js"></script>
+</body>
+</html>

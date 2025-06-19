@@ -1,0 +1,69 @@
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="mb-3" style="color: #3b5323;"><%= crop.name %></h3>
+                    <% if (success_msg && success_msg.length > 0) { %>
+                        <div class="alert alert-success"><%= success_msg %></div>
+                    <% } %>
+                    <% if (error_msg && error_msg.length > 0) { %>
+                        <div class="alert alert-danger"><%= error_msg %></div>
+                    <% } %>
+                    <p><strong>Category:</strong> <%= crop.category %></p>
+                    <p><strong>Price:</strong> ₹<%= crop.price %> / unit</p>
+                    <p><strong>Quantity:</strong> <%= crop.quantity %></p>
+                    <p><strong>Description:</strong> <%= crop.description %></p>
+                    <p><strong>Farmer:</strong> <%= crop.farmerId && crop.farmerId.username ? crop.farmerId.username : 'Unknown Farmer' %></p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="/farmer/crops" class="btn btn-secondary btn-sm">Back to Catalog</a>
+                        <% if (user && crop.farmerId && crop.farmerId._id && crop.farmerId._id.toString() === user._id.toString()) { %>
+                            <a href="/farmer/crops/<%= crop._id %>/edit" class="btn btn-primary btn-sm" style="background-color: #3b5323; border-color: #3b5323;">Edit</a>
+                            <form action="/farmer/crops/<%= crop._id %>/delete" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this crop?')">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="mb-3" style="color: #3b5323;">Reviews</h5>
+                    <% if (reviews.length === 0) { %>
+                        <p>No reviews yet.</p>
+                    <% } else { %>
+                        <% reviews.forEach(review => { %>
+                            <div class="mb-3 p-2 border rounded">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><strong><%= review.createdBy.username %></strong></span>
+                                    <span class="badge bg-success">Rating: <%= review.rating %>/5</span>
+                                </div>
+                                <div><%= review.content %></div>
+                                <small class="text-muted">on <%= new Date(review.createdAt).toLocaleDateString() %></small>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                    <!-- Add Review Form -->
+                    <form action="/farmer/crops/<%= crop._id %>/reviews" method="POST" class="mt-4">
+                        <div class="mb-2">
+                            <label for="content" class="form-label">Add a Review</label>
+                            <textarea class="form-control" id="content" name="content" rows="2" required></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label for="rating" class="form-label">Rating</label>
+                            <select class="form-select" id="rating" name="rating" required>
+                                <option value="">Select rating</option>
+                                <% for (let i = 1; i <= 5; i++) { %>
+                                    <option value="<%= i %>"><%= i %></option>
+                                <% } %>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

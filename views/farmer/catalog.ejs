@@ -1,0 +1,61 @@
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0" style="color: #3b5323;">Crop Catalog</h2>
+        <a href="/farmer/crops/new" class="btn btn-primary" style="background-color: #3b5323; border-color: #3b5323;">+ Add New Crop</a>
+    </div>
+
+    <% if (success_msg && success_msg.length > 0) { %>
+        <div class="alert alert-success"><%= success_msg %></div>
+    <% } %>
+    <% if (error_msg && error_msg.length > 0) { %>
+        <div class="alert alert-danger"><%= error_msg %></div>
+    <% } %>
+
+    <div class="row">
+        <% crops.forEach(crop => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #3b5323;"><%= crop.name %></h5>
+                        <p class="card-text">
+                            <strong>Category:</strong> <%= crop.category %><br>
+                            <strong>Price:</strong> ₹<%= crop.price %> / unit<br>
+                            <strong>Quantity:</strong> <%= crop.quantity %><br>
+                            <strong>Farmer:</strong> <%= crop.farmerId && crop.farmerId.username ? crop.farmerId.username : 'Unknown Farmer' %>
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="/farmer/crops/<%= crop._id %>" class="btn btn-outline-success btn-sm">View</a>
+                            <% if (user && crop.farmerId && crop.farmerId._id && crop.farmerId._id.toString() === user._id.toString()) { %>
+                                <div>
+                                    <a href="/farmer/crops/<%= crop._id %>/edit" class="btn btn-outline-primary btn-sm">Edit</a>
+                                    <form action="/farmer/crops/<%= crop._id %>/delete" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Delete this crop?')">Delete</button>
+                                    </form>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<style>
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.btn-outline-success {
+    color: #3b5323;
+    border-color: #3b5323;
+}
+.btn-outline-success:hover {
+    background-color: #3b5323;
+    color: #fff;
+}
+</style> 

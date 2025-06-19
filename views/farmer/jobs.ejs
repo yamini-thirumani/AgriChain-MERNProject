@@ -1,0 +1,34 @@
+<div class="container py-4">
+    <h2 class="mb-4" style="color: #3b5323;">My Crop Transport Jobs</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-success">
+                <tr>
+                    <th>Crop</th>
+                    <th>Transporter</th>
+                    <th>Retailer</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (jobs.length === 0) { %>
+                    <tr><td colspan="5" class="text-center">No jobs found.</td></tr>
+                <% } else { %>
+                    <% jobs.forEach(job => { %>
+                        <tr>
+                            <td><%= job.cropId ? job.cropId.name : 'N/A' %></td>
+                            <td><%= job.transporterId ? job.transporterId.username : 'Unassigned' %></td>
+                            <td><%= job.retailerId ? job.retailerId.username : 'Unassigned' %></td>
+                            <td>
+                                <span class="badge bg-info text-dark"><%= job.status %></span>
+                            </td>
+                            <td><%= job.updatedAt ? new Date(job.updatedAt).toLocaleString() : '' %></td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <a href="/farmer/dashboard" class="btn btn-secondary mt-3">Back to Dashboard</a>
+</div> 
