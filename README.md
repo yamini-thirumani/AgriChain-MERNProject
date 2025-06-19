@@ -6,7 +6,7 @@
 
 ## Introduction
 
-In traditional agricultural systems, inefficiencies, lack of traceability, and disconnected stakeholders result in high losses, low trust, and poor data visibility. **AgriChain** aims to solve this by creating a digital platform that links all major players in the supply chain — from **farmers to consumers**.
+In traditional agricultural systems, inefficiencies, lack of traceability, and disconnected stakeholders result in high losses, low trust, and poor data visibility. **AgriChain** aims to solve this by creating a digital platform that links all major players in the supply chain from **farmers to consumers**.
 
 Built using the **MERN stack**, AgriChain enables seamless crop management, real-time transportation tracking, retailer access to farm products, and consumer confidence through end-to-end traceability.
 
